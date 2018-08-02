@@ -16,7 +16,7 @@
 
 # you label your images - can be one label per image or multiple labels
 # REQUIRED: 10 images per label
-# DESITED: 100 images per label
+# DESIRED: 100 images per label
 
 # you train model
 # you will get an email when the model training is complete
