@@ -1,8 +1,6 @@
 # from - https://cloud.google.com/ml-engine/docs/tensorflow/getting-started-training-prediction
 
-
 # NOTE: can use gcloud shell or local (Mac) w/gcloud sdk
-
 # -----------------------set up-------------------------
 # enable Cloud ML and GCE APIs
 # create service account (key) for Project Owner
