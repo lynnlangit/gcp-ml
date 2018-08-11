@@ -2,24 +2,25 @@
 # from - https://cloud.google.com/vision/docs/using-python
 # about - https://cloud.google.com/vision/docs/supported-files
 
-'''This script generates request JSON for the Vision API.
-Run the script using the following command:
-  python generatejson.py \
-      -i <input_file> \
-      -o <output_file.json>
-where the input file contains information on how to process a set of URIs, and
-the output is a JSON request file.
-The Python script reads an input text file that contains one line for each
-image to process. Each line in the input file contains the URI of an image--for
-example, its file location--and a space-separated list of
-Feature:max_results to request for the image. The script associates each
-Feature with an integer value from 1-6 (see the 'get_detection_type' function
-definition).
-For example, the following input file content requests face and label
-detection annotations for image1, and landmark and logo detection annotations
-for image2; each with a maximum of 10 results per annotation.
-filepath_to_image1.jpg 1:10 4:10
-filepath_to_image2.png 2:10 3:10
+'''This script generates request JSON for the Vision API
+
+  `python generatejson.py -i <input_file> -o <output_file.json>`
+
+    - input file contains information on how to process a set of URIs, 
+    - output is a JSON request file
+
+    The Python script reads an input text file that contains one line for each
+    image to process. Each line in the input file contains the URI of an image--for
+    example, its file location--and a space-separated list of
+    Feature:max_results to request for the image. The script associates each
+    Feature with an integer value from 1-6 (see the 'get_detection_type' function
+    definition).
+
+    For example, the following input file content requests face and label
+    detection annotations for image1, and landmark and logo detection annotations
+    for image2; each with a maximum of 10 results per annotation.
+    filepath_to_image1.jpg 1:10 4:10
+    filepath_to_image2.png 2:10 3:10
 '''
 
 import argparse
@@ -37,16 +38,13 @@ def main(input_file, output_filename):
     # Collect all requests into an array - one per line in the input file
     request_list = []
     for line in input_file:
-        # The first value of a line is the image. The rest are features.
+       
         image_filename, features = line.lstrip().split(' ', 1)
-
-        # First, get the image data
         with open(image_filename, 'rb') as image_file:
             content_json_obj = {
                 'content': base64.b64encode(image_file.read()).decode('UTF-8')
             }
 
-        # Then parse out all the features we want to compute on this image
         feature_json_obj = []
         for word in features.split(' '):
             feature, max_results = word.split(':', 1)
