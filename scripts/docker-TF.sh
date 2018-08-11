@@ -19,7 +19,6 @@ curl -d '{"instances": [1.0, 2.0, 5.0]}' -X POST http://localhost:8501/v1/models
 # 5. verify the result
 { "predictions": [3.5, 4.0, 5.5] }
 
-
 #-------------------Alternative Instructions---------------------------
 docker pull tensorflow/serving:latest-devel
 docker run -it -p 8500:8500 tensorflow/serving:latest-devel
