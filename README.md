@@ -5,9 +5,17 @@ Google Cloud Platform Analytics and Machine Learning Samples for services shown 
 ![GCP Analytics & ML](/images/products.png)
 
 Samples currently include the following:
- - GCP Colabs (Jupyter-style) notebook for BigQuery (connect & run SQL queries)
- - GCP Colabs (Jupyter-style) notebook for BigQueryML (connect, build, train and predict using ML model) IMPORTANT: Use link in each notebook to open it in GCP Colabs environment
- - Other scripts and samples - Also for BigQueryML.
+ - **GCP Colabs** (Jupyter-style) notebook 
+    - for BigQuery (connect & run SQL queries)
+    - for BigQueryML (connect, build, train and predict using ML model) IMPORTANT: Use link in each notebook to open it in GCP Colabs environment
+ - **Scripts** and code samples 
+    - for BigQueryML in SQL
+    - for AutoML Vision and Natural Language
+    - for TensorFlow 
+        - Docker image 
+        - Virtual Machine image
+        - MLEngine
+ 
 
  ## GCP AI Services
 
