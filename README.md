@@ -1,4 +1,4 @@
-# gcp-ml
+# GCP - Machine Learning
 
 Google Cloud Platform Analytics and Machine Learning Samples for services shown below.  
 
