@@ -10,11 +10,22 @@ Samples currently include the following:
     - for BigQueryML (connect, build, train and predict using ML model) IMPORTANT: Use link in each notebook to open it in GCP Colabs environment
  - **Scripts** and code samples 
     - for BigQueryML in SQL
-    - for AutoML Vision and Natural Language
+    - for AutoML Vision 
+    - for AutoML Natural Language
     - for TensorFlow 
         - Docker image 
         - Virtual Machine image
         - MLEngine
+ - **Scripts Needed**
+    - Cloud TPUs
+    - Cloud Talent Solution (Jobs)
+    - Vision API
+    - Video API
+    - Speech-to-text API
+    - Text-to-Speech API
+    - Natural Language API
+    - Translation API
+    - Dialogflow
  
 
  ## GCP AI Services
