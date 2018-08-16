@@ -11,8 +11,8 @@ Samples currently include the following:
     - for TensorFlow w/GPU - speed test
  - **Scripts** and code samples 
     - for BigQueryML in SQL
-    - for AutoML Vision 
-    - for AutoML Natural Language
+    - for AutoML Vision & Natural Language
+    - for Datalab (Jupyter-notebooks on GCE)
     - for TensorFlow 
         - Docker image 
         - Virtual Machine image
