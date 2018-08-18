@@ -55,3 +55,6 @@ def job_title_auto_complete(client_service, query, company_name):
 
     results = complete.execute()
     print(results)
+
+# for more go to - https://cloud.google.com/talent-solution/job-search/docs/before-you-begin
+# also (beta) is - https://cloud.google.com/talent-solution/profile-search/

@@ -1,5 +1,9 @@
 # from - https://cloud.google.com/tpu/docs/quickstart
 
+#---------PREREQS------------------
+# IMPORTANT: Create a new GCP project
+# IMPORTANT: Enable TPU API for this project
+
 # create a GCS bucket
 # open cloud shell and use `ctpu` tool
 ctpu print-config
@@ -11,7 +15,7 @@ ctpu up [optional: --name --zone]
 #   - default zone is `us-central1-b`
 
 #-----------SCRIPT A TEST JOB-------------------------
-# create a file named `cloud-tpu.py`
+# create a file named `cloud-tpu.py` - 'ctrl-X' to write & save the file
 import os
 import tensorflow as tf
 from tensorflow.contrib import tpu
