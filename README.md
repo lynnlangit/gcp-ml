@@ -35,3 +35,8 @@ Samples currently include the following:
 
  ![GCP AI](/images/gcp-ai.png)
 
+ ---
+ ## Setup
+
+ To setup general prerequisites see the `SETUP.md` file in this Repo.
+
