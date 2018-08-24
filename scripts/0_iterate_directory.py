@@ -8,6 +8,6 @@ path = os.getcwd() + "\\data"
 list_of_files = [name for name in os.listdir(path)]
 
 for file_in_dir in list_of_files:
-    text_file.write("{} 5:10\n".format(file_in_dir))
+    text_file.write("\\data\\{} 5:10\n".format(file_in_dir))
 
 text_file.close()
