@@ -9,18 +9,11 @@
     - input file contains information on how to process a set of URIs, 
     - output is a JSON request file
 
-    The Python script reads an input text file that contains one line for each
-    image to process. Each line in the input file contains the URI of an image--for
-    example, its file location--and a space-separated list of
-    Feature:max_results to request for the image. The script associates each
-    Feature with an integer value from 1-6 (see the 'get_detection_type' function
-    definition).
-
-    For example, the following input file content requests face and label
-    detection annotations for image1, and landmark and logo detection annotations
-    for image2; each with a maximum of 10 results per annotation.
-    filepath_to_image1.jpg 1:10 4:10
-    filepath_to_image2.png 2:10 3:10
+    Ex. input file below ea. detection with max of 10 results / annotation.
+    - face(1) and label detection(4) annotations for image1 
+    - landmark(2) and logo detection(3) annotations for image2 
+    `filepath_to_image1.jpg 1:10 4:10
+     filepath_to_image2.png 2:10 3:10`
 '''
 
 import argparse
@@ -35,7 +28,6 @@ def main(input_file, output_filename):
         input_file: a file object, containing lines of input to convert.
         output_filename: the name of the file to output the json to.
     """
-    # Collect all requests into an array - one per line in the input file
     request_list = []
     for line in input_file:
        
