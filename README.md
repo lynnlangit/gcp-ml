@@ -2,7 +2,7 @@
 
 Google Cloud Platform Analytics and Machine Learning Samples for services shown below.  
 
-![GCP Analytics & ML](/images/products.png)
+![GCP ML](/images/gcp-ml.png)
 
 Samples currently include the following:
  - **GCP Colabs** (Jupyter-style) notebook 
