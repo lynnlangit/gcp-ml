@@ -34,10 +34,16 @@ You can use the editor and language of your choice.  I am using VSCode and Pytho
 
  ## Enable APIs
 
- You will be using a number of GCP services.  Some services are enabled by default, however, for other services
- You will need explicitly enable API or service.  TIP: Verify that you using the intended GCP Project before you enable a service:
+ You will be using a number of GCP services.  Some services are enabled by default, however, for other services you will need explicitly enable API or service.  
 
- Enabled by default:
- - GCS, GCE, BigQuery, Kubernetes
+TIP: Verify that you using the intended GCP Project before you enable a service:
+
+GCP Services enabled by default:
+ - GCS, GCE, BigQuery, Kubernetes  
+
  Must be explicitly enabled:
- - Vision API, Video API, Natural Language API, Speech API, Translation API, Dialogflow, Cloud Machine Learning Engine, Cloud TPU, MLKit (for Firebase - TensorFlow Lite on mobile device)
+ - Vision API, Video API, Natural Language API, Speech API, Translation API, Dialogflow
+ - Cloud Machine Learning Engine
+ - Cloud TPU
+ - MLKit (for Firebase - TensorFlow Lite on mobile device)
+ - Cloud Repositories (if using some of GCP-supplied code samples)
