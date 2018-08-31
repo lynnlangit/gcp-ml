@@ -1,9 +1,7 @@
 # from -- https://cloud.google.com/deep-learning-vm/docs/
 
 # choose from 3 images - specify GPU info - can use GCP Marketplace
-# TensorFlow
-# PyTorch
-# Base
+# TensorFlow -or- PyTorch -or- Base
 
 # CPU-instance
 export IMAGE_FAMILY="tf-latest-cpu" # image family from the previous step

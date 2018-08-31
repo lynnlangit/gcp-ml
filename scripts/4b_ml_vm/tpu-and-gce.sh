@@ -1,19 +1,14 @@
 # from - https://cloud.google.com/tpu/docs/quickstart
-
 #---------PREREQS------------------
-# IMPORTANT: Create a new GCP project
-# IMPORTANT: Enable TPU API for this project
-
+# IMPORTANT: Create a NEW GCP project -AND- enable TPU API for this project
 # create a GCS bucket
 # open cloud shell and use `ctpu` tool
 ctpu print-config
-
 #---------CREATE a GCE instance with TPU-------------
 ctpu up [optional: --name --zone]
 # TIPS: 
 #   - use `ctpu up` to restore any lost connection
 #   - default zone is `us-central1-b`
-
 #-----------SCRIPT A TEST JOB-------------------------
 # create a file named `cloud-tpu.py` - 'ctrl-X' to write & save the file
 import os
@@ -43,16 +38,13 @@ with tf.Session(tpu_grpc_url) as sess:
   sess.run(tpu.shutdown_system())
 
 print('Done!')
-
 #-------------RUN-------------------------------
 python cloud-tpu.py
 [array([[4., 4., 4.],
        [4., 4., 4.],
        [4., 4., 4.]], dtype=float32)]
 Done!
-
 #-------------CLEAN UP---------------------------
-
 # disconnect
 exit
 # delete
