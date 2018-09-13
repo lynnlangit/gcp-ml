@@ -16,9 +16,7 @@ http://localhost:8081
 # Wait for ssh key to propogate
 # Navigate to datalab/docs/samples/Anomaly_Detection_in_HTTP_Logs.ipynb
 
-
 # ---------------REMOVE ALL---------------
-
 # DELETE the VM
 datalab delete datalab-lynntest
 # DELTE the Persistent Disk

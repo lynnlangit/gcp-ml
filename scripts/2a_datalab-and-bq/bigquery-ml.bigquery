@@ -1,6 +1,5 @@
 --FROM 'https://cloud.google.com/bigquery/docs/bigqueryml-analyst-start'
 
---CREATE MODEL
     #standardSQL
     CREATE MODEL `bqml_tutorial.sample_model`OPTIONS(model_type='logistic_reg') AS
     SELECT
@@ -12,7 +11,6 @@
     FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*`
     WHERE _TABLE_SUFFIX BETWEEN '20160801' AND '20170630'
 
---EVALUATE MODEL
     #standardSQL
     SELECT *
     FROM ML.EVALUATE(MODEL `bqml_tutorial.sample_model`, (
@@ -25,7 +23,6 @@
     FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*`
     WHERE _TABLE_SUFFIX BETWEEN '20170701' AND '20170801'))
 
-  --USE MODEL
     #standardSQL
     SELECT country, SUM(predicted_label) as total_predicted_purchases
     FROM ML.PREDICT(MODEL `bqml_tutorial.sample_model`, (

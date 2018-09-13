@@ -5,7 +5,6 @@ from sentiment_analysis import analyze
 
 RESOURCES = os.path.join(os.path.dirname(__file__), 'resources')
 
-
 def test_pos(capsys):
     analyze(os.path.join(RESOURCES, 'pos.txt'))
     out, err = capsys.readouterr()

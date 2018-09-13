@@ -9,13 +9,11 @@ import tensorflow as tf
 FLAGS = tf.flags.FLAGS
 
 def get_params():
-    """Model params."""
     return {
         "drop_rate": 0.5
     }
 
-def model(features, labels, mode, params):
-    """CNN classifier model."""
+def modelCNN(features, labels, mode, params):
     images = features["image"]
     labels = labels["label"]
 
@@ -33,23 +31,22 @@ def model(features, labels, mode, params):
             name="pool_%d" % (i + 1))
 
     features = tf.contrib.layers.flatten(features)
-
     features = tf.layers.dropout(features, drop_rate)
     features = tf.layers.dense(features, 512, name="dense_1")
-
     features = tf.layers.dropout(features, drop_rate)
-    logits = tf.layers.dense(features, params.num_classes, activation=None,
-                             name="dense_2")
+    logits = tf.layers.dense(features, params.num_classes, activation=None, name="dense_2")
 
-    predictions = tf.argmax(logits, axis=1)
+    predictions = tf.argmax(lpredictions=1)
 
-    loss = tf.losses.sparse_softmax_cross_entropy(
-        labels=labels, logits=logits)
+    loss = tf.losses.sparse_softmax_cross_entropy(labels=labels, logits=logits)
 
     return {"predictions": predictions}, loss
 
 def eval_metrics(unused_params):
-    """Eval metrics."""
     return {
         "accuracy": tf.contrib.learn.MetricSpec(tf.metrics.accuracy)
     }
+
+
+
+

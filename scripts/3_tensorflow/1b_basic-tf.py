@@ -2,8 +2,6 @@
 """
 Original file at
     https://colab.research.google.com/github/tensorflow/models/blob/master/samples/core/get_started/_index.ipynb
-
-# Get Started with TensorFlow
 """
 import tensorflow as tf
 
@@ -27,8 +25,6 @@ model = tf.keras.models.Sequential([
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
-
-"""Train and evaluate model:"""
 
 model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
