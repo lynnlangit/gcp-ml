@@ -1,0 +1,60 @@
+--FROM 'https://cloud.google.com/bigquery/docs/bigqueryml-analyst-start'
+--AND 'https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name'
+
+-- BigQuery ML currently supports the following types of models:
+--  1. Linear regression — use to predict a numerical value
+--  2. Binary logistic regression — use to predict whether an input is a member of a class or not.
+--  3. Multiclass logistic regression for classification — use to predict whether an input is a member of 2+ classes 
+--         such as whether an input is "low-value", "medium-value", or "high-value".
+
+#standardSQL
+    CREATE MODEL `bqml_tutorial.linearModel` OPTIONS ( model_type='linear_reg', ls_init_learn_rate=.15, l1_reg=1,max_iterations=5 ) AS
+    SELECT
+        column1, 
+        column2,
+        column3,
+        label --two values (bool), can't be null - c-example below
+--         IF(totals.transactions IS NULL, 0, 1) AS label,
+--         IFNULL(device.operatingSystem, "") AS os,
+--         device.isMobile AS is_mobile,
+--         IFNULL(totals.pageviews, 0) AS pageviews
+    FROM `lynnlangit.mytable`
+    WHERE column4 < 10
+
+-- Three ways to create model
+--    1) no split
+--    2) sequential data split
+--    3) using a custom split method and training the model by joining the data from the evaluation and training tables
+
+-- #2
+    CREATE MODEL `mydataset.mymodel`OPTIONS
+    ( model_type='linear_reg',
+        ls_init_learn_rate=.15,
+        l1_reg=1,
+        max_iterations=5,
+        data_split_method='seq',
+        data_split_eval_fraction=0.3,   --note the split value (.3)
+        data_split_col='timestamp' ) AS --note the split column (timestamp)
+    SELECT
+        column1,
+        column2,
+        column3,
+        timestamp, --note the timestamp
+        label
+    FROM `mydataset.mytable`
+    WHERE column4 < 10
+
+-- #3
+    CREATE MODEL `mydataset.mymodel` OPTIONS
+    ( model_type='linear_reg',
+        data_split_method='custom',     --note the split method (custom)
+        data_split_col='split_col' ) AS --note the split columng
+    SELECT
+        *,
+        false AS split_col
+    FROM `mydataset.training_table`
+        UNION ALL
+    SELECT
+    *,
+    true AS split_col
+    FROM `mydataset.evaluation_table`
