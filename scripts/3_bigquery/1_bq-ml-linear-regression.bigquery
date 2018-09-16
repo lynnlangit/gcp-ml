@@ -1,9 +1,6 @@
---FROM 'https://cloud.google.com/bigquery/docs/bigqueryml-analyst-start'
---AND '
+--  Linear regression — use to predict a numeric value
 
--- BigQuery ML currently supports the following types of models:
---  1. Linear regression — use to predict a numerical value
-
+-- #1 - Train - no split
 #standardSQL
     CREATE MODEL `bqml_tutorial.linearModel` OPTIONS ( model_type='linear_reg', ls_init_learn_rate=.15, l1_reg=1,max_iterations=5 ) AS
     SELECT
@@ -18,12 +15,8 @@
     FROM `lynnlangit.mytable`
     WHERE column4 < 10
 
--- Three ways to create model
---    1) no split
---    2) sequential data split
---    3) using a custom split method and training the model by joining the data from the evaluation and training tables
-
--- #2
+-- #2 - Sequential data split
+#standardSQL
     CREATE MODEL `mydataset.mymodel`OPTIONS
     ( model_type='linear_reg',
         ls_init_learn_rate=.15,
@@ -41,7 +34,8 @@
     FROM `mydataset.mytable`
     WHERE column4 < 10
 
--- #3
+-- #3 - Use a custom split method, train model by joining the data from the eval & train tables
+#standardSQL
     CREATE MODEL `mydataset.mymodel` OPTIONS
     ( model_type='linear_reg',
         data_split_method='custom',     --note the split method (custom)

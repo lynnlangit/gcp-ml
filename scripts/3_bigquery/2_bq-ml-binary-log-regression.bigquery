@@ -1,7 +1,9 @@
---  Binary logistic regression — use to predict whether an input is a member of a class or not.
+--  Binary logistic regression — use to predict whether an input is a member of a class or not
 
     #standardSQL
     CREATE MODEL `bqml_tutorial.sample_model`OPTIONS(model_type='logistic_reg') AS
+    --NOTE: Can train logistic regression model with specified weights as shown below:
+    --CREATE MODEL `mydataset.mymodel` OPTIONS ( model_type='logistic_reg',class_weights=[('0', 0.9), ('1', 0.1)]) AS ...
     SELECT
         IF(totals.transactions IS NULL, 0, 1) AS label,
         IFNULL(device.operatingSystem, "") AS os,
@@ -10,9 +12,6 @@
         IFNULL(totals.pageviews, 0) AS pageviews
     FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*`
     WHERE _TABLE_SUFFIX BETWEEN '20160801' AND '20170630'
-
-    --NOTE: Can train logistic regression model with specified weights as shown below:
-    --CREATE MODEL `mydataset.mymodel` OPTIONS ( model_type='logistic_reg',class_weights=[('0', 0.9), ('1', 0.1)]) AS ...
 
     #standardSQL
     SELECT *
