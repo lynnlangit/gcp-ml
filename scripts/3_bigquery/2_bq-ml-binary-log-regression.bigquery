@@ -1,9 +1,4 @@
---FROM 'https://cloud.google.com/bigquery/docs/bigqueryml-analyst-start'
--- BigQuery ML currently supports the following types of models:
---  1. Linear regression — use to predict a numerical value
---  2. Binary logistic regression — use to predict whether an input is a member of a class or not.
---  3. Multiclass logistic regression for classification — use to predict whether an input is a member of 2+ classes 
---         such as whether an input is "low-value", "medium-value", or "high-value".
+--  Binary logistic regression — use to predict whether an input is a member of a class or not.
 
     #standardSQL
     CREATE MODEL `bqml_tutorial.sample_model`OPTIONS(model_type='logistic_reg') AS
@@ -16,9 +11,8 @@
     FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*`
     WHERE _TABLE_SUFFIX BETWEEN '20160801' AND '20170630'
 
-    --NOTE: Can train logistic regression model with automatically calculated -OR- specified weights as shown below:
-    --CREATE MODEL ... OPTIONS ( model_type='logistic_reg', auto_class_weights=true ) AS...  --OR--
-    --CREATE MODEL ... OPTIONS ( model_type='logistic_reg', class_weights=[('label1', 0.5), ('label2', 0.3), ('label3', 0.2)]) AS...
+    --NOTE: Can train logistic regression model with specified weights as shown below:
+    --CREATE MODEL `mydataset.mymodel` OPTIONS ( model_type='logistic_reg',class_weights=[('0', 0.9), ('1', 0.1)]) AS ...
 
     #standardSQL
     SELECT *

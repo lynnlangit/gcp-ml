@@ -1,11 +1,8 @@
 --FROM 'https://cloud.google.com/bigquery/docs/bigqueryml-analyst-start'
---AND 'https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name'
+--AND '
 
 -- BigQuery ML currently supports the following types of models:
 --  1. Linear regression — use to predict a numerical value
---  2. Binary logistic regression — use to predict whether an input is a member of a class or not.
---  3. Multiclass logistic regression for classification — use to predict whether an input is a member of 2+ classes 
---         such as whether an input is "low-value", "medium-value", or "high-value".
 
 #standardSQL
     CREATE MODEL `bqml_tutorial.linearModel` OPTIONS ( model_type='linear_reg', ls_init_learn_rate=.15, l1_reg=1,max_iterations=5 ) AS
