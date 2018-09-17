@@ -1,51 +1,75 @@
---  Linear regression — use to predict a numeric value
+-- Linear regression — use to predict a numeric value
+-- The model is used to predict the combined three point field goal attempts based on the previous game statistics
 
--- #1 - Train - no split
-#standardSQL
-    CREATE MODEL `bqml_tutorial.linearModel` OPTIONS ( model_type='linear_reg', ls_init_learn_rate=.15, l1_reg=1,max_iterations=5 ) AS
-    SELECT
-        column1, 
-        column2,
-        column3,
-        label --two values (bool), can't be null - c-example below
---         IF(totals.transactions IS NULL, 0, 1) AS label,
---         IFNULL(device.operatingSystem, "") AS os,
---         device.isMobile AS is_mobile,
---         IFNULL(totals.pageviews, 0) AS pageviews
-    FROM `lynnlangit.mytable`
-    WHERE column4 < 10
+--#0 - Dataset
+-- dataset = bigquery.Dataset(client.dataset('bqml_tutorial'))
+-- dataset.location = 'US'
+-- client.create_dataset(dataset)
 
--- #2 - Sequential data split
+-- #1 - Create and Train
 #standardSQL
-    CREATE MODEL `mydataset.mymodel`OPTIONS
-    ( model_type='linear_reg',
-        ls_init_learn_rate=.15,
-        l1_reg=1,
-        max_iterations=5,
-        data_split_method='seq',
-        data_split_eval_fraction=0.3,   --note the split value (.3)
-        data_split_col='timestamp' ) AS --note the split column (timestamp)
-    SELECT
-        column1,
-        column2,
-        column3,
-        timestamp, --note the timestamp
-        label
-    FROM `mydataset.mytable`
-    WHERE column4 < 10
+    CREATE OR REPLACE MODEL `bqml_tutorial.ncaa_model` OPTIONS(
+  model_type='linear_reg', data_split_eval_fraction=0.1, max_iteration=50) AS
+SELECT
+  * EXCEPT(
+    game_id, season, scheduled_date,
+    total_three_points_made,
+    total_three_points_att),
+  total_three_points_att as label
+FROM
+  `bqml_tutorial.wide_games`
+WHERE
+  # remove the game to predict
+  game_id != 'f1063e80-23c7-486b-9a5e-faa52beb2d83'
 
--- #3 - Use a custom split method, train model by joining the data from the eval & train tables
-#standardSQL
-    CREATE MODEL `mydataset.mymodel` OPTIONS
-    ( model_type='linear_reg',
-        data_split_method='custom',     --note the split method (custom)
-        data_split_col='split_col' ) AS --note the split columng
-    SELECT
-        *,
-        false AS split_col
-    FROM `mydataset.training_table`
-        UNION ALL
-    SELECT
-    *,
-    true AS split_col
-    FROM `mydataset.evaluation_table`
+--#2 - Monitor
+SELECT
+  *
+FROM
+  ML.TRAINING_INFO(MODEL `bqml_tutorial.ncaa_model`)
+
+--#3 - Evaluate
+WITH eval_table AS (
+SELECT
+  *,
+  total_three_points_att AS label
+FROM
+  `bqml_tutorial.wide_games` )
+SELECT
+  *
+FROM
+  ML.EVALUATE(MODEL `bqml_tutorial.ncaa_model`,
+    TABLE eval_table)
+
+--#4 - Predict
+WITH game_to_predict AS (
+  SELECT
+    *
+  FROM
+    `bqml_tutorial.wide_games`
+  WHERE
+    game_id='f1063e80-23c7-486b-9a5e-faa52beb2d83' )
+SELECT
+  truth.game_id AS game_id,
+  total_three_points_att,
+  predicted_total_three_points_att
+FROM (
+  SELECT
+    game_id,
+    predicted_label AS predicted_total_three_points_att
+  FROM
+    ML.PREDICT(MODEL `bqml_tutorial.ncaa_model`,
+      table game_to_predict) ) AS predict
+JOIN (
+  SELECT
+    game_id,
+    total_three_points_att AS total_three_points_att
+  FROM
+    game_to_predict) AS truth
+ON
+  predict.game_id = truth.game_id
+
+
+
+   
+  
