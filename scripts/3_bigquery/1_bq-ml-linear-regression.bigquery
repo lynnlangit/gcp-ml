@@ -1,21 +1,25 @@
 -- Linear regression — use to predict a numeric value
 -- The model is used to predict the combined three point field goal attempts based on the previous game statistics
 
---#0 - Dataset
+--#0 - Dataset and Tables
+
 -- dataset = bigquery.Dataset(client.dataset('bqml_tutorial'))
 -- dataset.location = 'US'
 -- client.create_dataset(dataset)
+-- create two tables by copying `bigquery-public-data.ncaa_basketball.mbb_teams_games_sr` as `cume_games` & 'wide_games'
 
 -- #1 - Create and Train
+-- NOTES: must convert or remove TIMESTAMP columns, must replace NULL with 0 for label column
 #standardSQL
     CREATE OR REPLACE MODEL `bqml_tutorial.ncaa_model` OPTIONS(
   model_type='linear_reg', data_split_eval_fraction=0.1, max_iteration=50) AS
 SELECT
   * EXCEPT(
-    game_id, season, scheduled_date,
-    total_three_points_made,
-    total_three_points_att),
-  total_three_points_att as label
+    game_id, season, scheduled_date,gametime
+    three_points_made,
+    three_points_att,
+    created),
+    IF(three_points_att IS NULL, 0, 1) AS label,
 FROM
   `bqml_tutorial.wide_games`
 WHERE
@@ -32,7 +36,7 @@ FROM
 WITH eval_table AS (
 SELECT
   *,
-  total_three_points_att AS label
+  three_points_att AS label
 FROM
   `bqml_tutorial.wide_games` )
 SELECT
@@ -51,7 +55,7 @@ WITH game_to_predict AS (
     game_id='f1063e80-23c7-486b-9a5e-faa52beb2d83' )
 SELECT
   truth.game_id AS game_id,
-  total_three_points_att,
+  three_points_att,
   predicted_total_three_points_att
 FROM (
   SELECT
@@ -63,7 +67,7 @@ FROM (
 JOIN (
   SELECT
     game_id,
-    total_three_points_att AS total_three_points_att
+    three_points_att AS total_three_points_att
   FROM
     game_to_predict) AS truth
 ON
