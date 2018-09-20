@@ -2,11 +2,8 @@
 -- The model is used to predict the combined three point field goal attempts based on the previous game statistics
 
 --#0 - Dataset and Tables
-
--- dataset = bigquery.Dataset(client.dataset('bqml_tutorial'))
--- dataset.location = 'US'
--- client.create_dataset(dataset)
--- create two tables by copying `bigquery-public-data.ncaa_basketball.mbb_teams_games_sr` as `cume_games` & 'wide_games'
+-- CREATE a BigQuery dataset in the BQ console named 'bqml_tutorial' in 'US'
+-- CREATE two tables by copying `bigquery-public-data.ncaa_basketball.mbb_teams_games_sr` as `cume_games` & 'wide_games'
 
 -- #1 - Create and Train
 -- NOTES: must convert or remove TIMESTAMP columns, must replace NULL with 0 for label column
@@ -27,23 +24,15 @@ WHERE
   game_id != 'f1063e80-23c7-486b-9a5e-faa52beb2d83'
 
 --#2 - Monitor
-SELECT
-  *
-FROM
-  ML.TRAINING_INFO(MODEL `bqml_tutorial.ncaa_model`)
+SELECT * FROM ML.TRAINING_INFO(MODEL `bqml_tutorial.ncaa_model`)
 
 --#3 - Evaluate
 WITH eval_table AS (
-SELECT
-  *,
-  three_points_att AS label
-FROM
-  `bqml_tutorial.wide_games` )
-SELECT
-  *
-FROM
-  ML.EVALUATE(MODEL `bqml_tutorial.ncaa_model`,
-    TABLE eval_table)
+  SELECT *,three_points_att AS label
+  FROM `bqml_tutorial.wide_games` )
+
+SELECT *
+FROM ML.EVALUATE(MODEL `bqml_tutorial.ncaa_model`,TABLE eval_table)
 
 --#4 - Predict
 WITH game_to_predict AS (
