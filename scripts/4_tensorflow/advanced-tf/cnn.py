@@ -37,10 +37,12 @@ def modelCNN(features, labels, mode, params):
     logits = tf.layers.dense(features, params.num_classes, activation=None, name="dense_2")
 
     predictions = tf.argmax(lpredictions=1)
-
+    
     loss = tf.losses.sparse_softmax_cross_entropy(labels=labels, logits=logits)
-
+    print("x")
+    #print (str(predictions), loss)
     return {"predictions": predictions}, loss
+   
 
 def eval_metrics(unused_params):
     return {
