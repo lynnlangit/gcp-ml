@@ -12,20 +12,14 @@ datalab create datalab-lynntest
 
 # CONNECT to Instance
 http://localhost:8081
-
 # Wait for ssh key to propogate
-# Navigate to datalab/docs/samples/Anomaly_Detection_in_HTTP_Logs.ipynb
+# Navigate to `datalab/docs/samples/Anomaly_Detection_in_HTTP_Logs.ipynb`
 
 # ---------------REMOVE ALL---------------
-# DELETE the VM
 datalab delete datalab-lynntest
-# DELTE the Persistent Disk
 datalab delete --delete-disk datalab-lynntest
-# DELETE the Firewall Rule
 gcloud compute firewall-rules delete datalab-network-allow-ssh
-# DELETE the Network
 gcloud compute networks delete datalab-network
-# DELETE the Repo
 gcloud source repos delete datalab-notebooks
 
 # ------------------TIPS:---------------------
