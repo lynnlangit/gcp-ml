@@ -1,4 +1,4 @@
-"""Simple convolutional neural network classififer."""
+"""Example of convolutional neural network classififer."""
 
 from __future__ import absolute_import
 from __future__ import division

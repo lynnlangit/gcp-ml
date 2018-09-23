@@ -6,6 +6,8 @@ python -m trainer --model=cnn --dataset=mnist
 You can then monitor the logs on Tensorboard:
 tensorboard --logdir=output"""
 
+#pip install -q --upgrade tensorflow-probability
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -13,6 +15,11 @@ from __future__ import print_function
 import tensorflow as tf
 import cnn as cnn
 import mnist as mnist
+
+import tensorflow_probability as tfp
+
+tf.enable_eager_execution()
+print("TensorFlow version : " + str(tf.__version__))
 
 tf.logging.set_verbosity(tf.logging.INFO)
 tf.flags.DEFINE_string("model", "", "Model name.")
@@ -50,7 +57,6 @@ HPARAMS = {
 }
 
 def get_params():
-    """Aggregates and returns hyper parameters."""
     hparams = HPARAMS
     hparams.update(DATASETS[FLAGS.dataset].get_params())
     hparams.update(MODELS[FLAGS.model].get_params())
@@ -61,7 +67,6 @@ def get_params():
     return hparams
 
 def make_input_fn(mode, params):
-    """Returns an input function to read the dataset."""
     def _input_fn():
         dataset = DATASETS[FLAGS.dataset].read(mode)
         if mode == tf.estimator.ModeKeys.TRAIN:

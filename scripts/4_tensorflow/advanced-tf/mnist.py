@@ -1,4 +1,4 @@
-"""MNIST dataset preprocessing and specifications."""
+"""MNIST dataset preprocessing & specifications."""
 
 from __future__ import absolute_import
 from __future__ import division
