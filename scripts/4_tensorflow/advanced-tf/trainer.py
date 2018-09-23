@@ -11,9 +11,10 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
+import cnn as cnn
+import mnist as mnist
 
 tf.logging.set_verbosity(tf.logging.INFO)
-
 tf.flags.DEFINE_string("model", "", "Model name.")
 tf.flags.DEFINE_string("dataset", "", "Dataset name.")
 tf.flags.DEFINE_string("output_dir", "", "Optional output dir.")
@@ -31,12 +32,14 @@ MODELS = {
     # This is a dictionary of models, the keys are model names, and the values
     # are the module containing get_params, model, and eval_metrics.
     # Example: "cnn": cnn
+    "cnn": cnn
 }
 
 DATASETS = {
     # This is a dictionary of datasets, the keys are dataset names, and the
     # values are the module containing get_params, prepare, read, and parse.
     # Example: "mnist": mnist
+    "mnist": mnist
 }
 
 HPARAMS = {
@@ -73,7 +76,6 @@ def make_input_fn(mode, params):
     return _input_fn
 
 def make_model_fn():
-    """Returns a model function."""
     def _model_fn(features, labels, mode, params):
         model_fn = MODELS[FLAGS.model].model
         global_step = tf.train.get_or_create_global_step()
@@ -103,7 +105,6 @@ def make_model_fn():
     return _model_fn
 
 def experiment_fn(run_config, hparams):
-    """Constructs an experiment object."""
     estimator = tf.contrib.learn.Estimator(
         model_fn=make_model_fn(), config=run_config, params=hparams)
     return tf.contrib.learn.Experiment(
@@ -115,7 +116,6 @@ def experiment_fn(run_config, hparams):
         min_eval_frequency=FLAGS.eval_frequency)
 
 def main(unused_argv):
-    """Main entry point."""
     if FLAGS.output_dir:
         model_dir = FLAGS.output_dir
     else:

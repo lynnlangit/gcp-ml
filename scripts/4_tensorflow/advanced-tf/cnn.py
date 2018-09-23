@@ -39,8 +39,6 @@ def modelCNN(features, labels, mode, params):
     predictions = tf.argmax(lpredictions=1)
     
     loss = tf.losses.sparse_softmax_cross_entropy(labels=labels, logits=logits)
-    print("x")
-    #print (str(predictions), loss)
     return {"predictions": predictions}, loss
    
 

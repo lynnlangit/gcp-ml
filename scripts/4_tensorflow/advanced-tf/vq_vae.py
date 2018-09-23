@@ -104,7 +104,6 @@ FILE_TEMPLATE = "binarized_mnist_{split}.amat"
 
 
 class MnistType(object):
-  """MNIST types for input data."""
   FAKE_DATA = "fake_data"
   THRESHOLD = "threshold"
   BERNOULLI = "bernoulli"

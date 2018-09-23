@@ -28,7 +28,6 @@ def get_params():
     }
 
 def prepare():
-    """This function will be called once to prepare the dataset."""
     if not os.path.exists(LOCAL_DIR):
         os.makedirs(LOCAL_DIR)
     for name in [
@@ -40,7 +39,6 @@ def prepare():
             urllib.request.urlretrieve(REMOTE_URL + name, LOCAL_DIR + name)
 
 def read(split):
-    """Create an instance of the dataset object."""
     image_urls = {
         tf.estimator.ModeKeys.TRAIN: TRAIN_IMAGE_URL,
         tf.estimator.ModeKeys.EVAL: TEST_IMAGE_URL
@@ -64,7 +62,6 @@ def read(split):
     return tf.contrib.data.Dataset.from_tensor_slices((images, labels))
 
 def parse(image, label):
-    """Parse input record to features and labels."""
     image = tf.to_float(image) / 255.0
     label = tf.to_int64(label)
     return {"image": image}, {"label": label}
