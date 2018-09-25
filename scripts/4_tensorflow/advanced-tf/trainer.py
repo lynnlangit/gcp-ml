@@ -1,12 +1,6 @@
 """This module handles training and evaluation of a neural network model.
-
-Invoke the following command to train the model:
-python -m trainer --model=cnn --dataset=mnist
-
-You can then monitor the logs on Tensorboard:
-tensorboard --logdir=output"""
-
-#pip install -q --upgrade tensorflow-probability
+to train: `python -m trainer --model=cnn --dataset=mnist`
+to monitor: `tensorboard --logdir=output` """
 
 from __future__ import absolute_import
 from __future__ import division
@@ -15,10 +9,11 @@ from __future__ import print_function
 import tensorflow as tf
 import cnn as cnn
 import mnist as mnist
-import tensorflow_probability as tfp
 
-tf.enable_eager_execution()
-print("TensorFlow version : " + str(tf.__version__))
+#pip install -q --upgrade tensorflow-probability
+#import tensorflow_probability as tfp
+#tf.enable_eager_execution()
+#print("TensorFlow version : " + str(tf.__version__))
 
 tf.logging.set_verbosity(tf.logging.INFO)
 tf.flags.DEFINE_string("model", "cnn", "Model name.")
@@ -26,6 +21,7 @@ tf.flags.DEFINE_string("dataset", "mnist", "Dataset name.")
 tf.flags.DEFINE_string("output_dir", "", "Optional output dir.")
 tf.flags.DEFINE_string("schedule", "train_and_evaluate", "Schedule.")
 tf.flags.DEFINE_string("hparams", "", "Hyper parameters.")
+tf.flags.DEFINE_string("mode", "mnist", "Model activity.")
 tf.flags.DEFINE_integer("num_epochs", 100000, "Number of training epochs.")
 tf.flags.DEFINE_integer("save_summary_steps", 10, "Summary steps.")
 tf.flags.DEFINE_integer("save_checkpoints_steps", 10, "Checkpoint steps.")
@@ -34,6 +30,8 @@ tf.flags.DEFINE_integer("eval_frequency", 10, "Eval frequency.")
 
 FLAGS = tf.flags.FLAGS
 
+split = tf.estimator.ModeKeys.TRAIN
+
 MODELS = {
     # This is a dictionary of models, the keys are model names, and the values
     # are the module containing get_params, model, and eval_metrics.
@@ -41,14 +39,10 @@ MODELS = {
     "cnn": [cnn.get_params,cnn.modelCNN,cnn.eval_metrics]
 }
 
-# Error here
-split = ["mySplit",0]
-
 DATASETS = {
     # This is a dictionary of datasets, the keys are dataset names, and the
     # values are the module containing get_params, prepare, read, and parse.
-    # mnist": mnist
-    "mnist": [mnist.get_params,mnist.prepare(),mnist.read(split),mnist.parse()]
+    "mnist": [mnist.Dataset,mnist.get_params,mnist.prepare(),mnist.read(split),mnist.parse()]
 }
 
 HPARAMS = {
@@ -62,7 +56,6 @@ def get_params():
     hparams = HPARAMS
     hparams.update(DATASETS[FLAGS.dataset].get_params())
     hparams.update(MODELS[FLAGS.model].get_params())
-
     hparams = tf.contrib.training.HParams(**hparams)
     hparams.parse(FLAGS.hparams)
 

@@ -16,7 +16,6 @@ def get_params():
 def modelCNN(features, labels, mode, params):
     images = features["image"]
     labels = labels["label"]
-
     tf.summary.image("images", images)
 
     drop_rate = params.drop_rate if mode == tf.estimator.ModeKeys.TRAIN else 0.0
