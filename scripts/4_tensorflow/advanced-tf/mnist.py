@@ -1,5 +1,3 @@
-"""MNIST dataset preprocessing & specifications."""
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -22,7 +20,6 @@ IMAGE_SIZE = 28
 NUM_CLASSES = 10
 
 def get_params():
-    """Dataset params."""
     return {
         "num_classes": NUM_CLASSES,
     }
