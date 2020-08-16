@@ -27,6 +27,7 @@ Samples currently include the following:
     - TensorFlow Model Garden - https://github.com/tensorflow/models/tree/master/official
     - TensorFlow Hub for Image, Text, Video (models + data) - https://tfhub.dev/
     - TF Datasets - https://www.tensorflow.org/datasets/catalog/overview
+    - YouTube Adventures In The Cloud series - https://www.youtube.com/AdventuresInTheCloud
 
  ---
  ## Setup
