@@ -29,6 +29,7 @@ Samples currently include the following:
     - TensorFlow Hub for Image, Text, Video (models + data) - https://tfhub.dev/
     - TF Datasets - https://www.tensorflow.org/datasets/catalog/overview
     - YouTube Adventures In The Cloud series - https://www.youtube.com/AdventuresInTheCloud
+    - Trying out DocumentAI - https://cloud.google.com/document-ai
 
  ---
  ## Setup
