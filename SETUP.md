@@ -47,3 +47,10 @@ GCP Services enabled by default:
  - Cloud TPU
  - MLKit (for Firebase - TensorFlow Lite on mobile device)
  - Cloud Repositories (if using some of GCP-supplied code samples)
+ 
+ ## GCP AI Hub
+  - AI Hub - https://aihub.cloud.google.com/u/0/ (see screen shot below)
+  - Resources in the AI Hub include the following:
+    - sample training data
+    - trained ML models & technical guides
+    - compute templates - kubeflow pipelines, ML continers, Jupyter notebooks, ML services, TF models and VM images
