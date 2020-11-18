@@ -25,6 +25,7 @@ Samples currently include the following:
     - Cloud TPUs
 
  - **Resources**
+    - GCP AI Hub - https://aihub.cloud.google.com/u/0/
     - TensorFlow Model Garden - https://github.com/tensorflow/models/tree/master/official
     - TensorFlow Hub for Image, Text, Video (models + data) - https://tfhub.dev/
     - TF Datasets - https://www.tensorflow.org/datasets/catalog/overview
