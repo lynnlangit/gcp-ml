@@ -3,15 +3,19 @@
 ## General GCP Account Setup
 
 The following are general setup steps:
-- Create a new gmail account for testing
-- Sign in to Chrome with this account
-- Create a new GCP account using a gmail address
-- Login to the GCP console with your gmail address
-- Create a billing account (required credit card)
-- Use 'new account' $ 300 credit
-- Create a new GCP Project
-- Set up a billing alert for that project with a notification via pub/sub
-- (Optional) Create a non-owner IAM admin user to reduce the attack surface
+- **CREATE** a new gmail account for testing
+    - **SIGN IN** to Chrome with this account
+    
+- **CREATE** a new GCP account using a gmail address
+    - **LOGIN** to the GCP console with your gmail address
+    
+- **CREATE** a billing account (required credit card)
+    - **USE** 'new account' $ 300 credit
+
+- **CREATE** a new GCP Project
+    - **ASSOCIATE** a billing account with this GCP project
+    - **SETUP** a billing alert for that project with a notification via pub/sub
+    - (Optional) **CREATE** a non-owner IAM admin user to reduce the attack surface
 
 ## Code & Code Editor
 
@@ -54,3 +58,5 @@ GCP Services enabled by default:
     - sample training data
     - trained ML models & technical guides
     - compute templates - kubeflow pipelines, ML continers, Jupyter notebooks, ML services, TF models and VM images
+    
+![AI Hub](https://github.com/lynnlangit/gcp-ml/blob/master/images/ai-hub-main.png)
