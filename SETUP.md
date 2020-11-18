@@ -8,14 +8,15 @@ The following are general setup steps:
     
 - **CREATE** a new GCP account using a gmail address
     - **LOGIN** to the GCP console with your gmail address
-    
-- **CREATE** a billing account (required credit card)
+    - **CREATE** a billing account (required credit card)
     - **USE** 'new account' $ 300 credit
 
 - **CREATE** a new GCP Project
     - **ASSOCIATE** a billing account with this GCP project
     - **SETUP** a billing alert for that project with a notification via pub/sub
     - (Optional) **CREATE** a non-owner IAM admin user to reduce the attack surface
+    
+---
 
 ## Code & Code Editor
 
