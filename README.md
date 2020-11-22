@@ -25,12 +25,18 @@ Samples currently include the following:
     - Cloud TPUs
 
  - **Resources**
-    - GCP AI Hub - https://aihub.cloud.google.com/u/0/
-    - TensorFlow Model Garden - https://github.com/tensorflow/models/tree/master/official
-    - TensorFlow Hub for Image, Text, Video (models + data) - https://tfhub.dev/
-    - TF Datasets - https://www.tensorflow.org/datasets/catalog/overview
-    - YouTube Adventures In The Cloud series - https://www.youtube.com/AdventuresInTheCloud
-    - Trying out DocumentAI - https://cloud.google.com/document-ai
+    - Sample Data, Models  
+      - GCP AI Hub - https://aihub.cloud.google.com/u/0/
+      - TensorFlow Model Garden - https://github.com/tensorflow/models/tree/master/official
+      - TensorFlow Hub for Image, Text, Video (models + data) - https://tfhub.dev/
+      - TF Datasets - https://www.tensorflow.org/datasets/catalog/overview
+      - YouTube Adventures In The Cloud series - https://www.youtube.com/AdventuresInTheCloud
+   - Learning about APIs and Concepts
+      - Trying out DocumentAI - https://cloud.google.com/document-ai
+      - Teachable Machines (teach kids AI) - https://teachablemachine.withgoogle.com/
+    - AI Ethics/Tools
+      - TensorFlow Responsible API - https://www.tensorflow.org/responsible_ai
+      - TensorFlow Fairness Indicators - https://www.tensorflow.org/tfx/guide/fairness_indicators
 
  ---
  ## Setup
