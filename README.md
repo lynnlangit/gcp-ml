@@ -23,20 +23,23 @@ Samples currently include the following:
         - MLEngine
         - TF Probability
     - Cloud TPUs
+    
+ ---
 
  - **Resources**
-    - Sample Data, Models  
+    - **Sample Data, Models**  
       - GCP AI Hub - https://aihub.cloud.google.com/u/0/
       - TensorFlow Model Garden - https://github.com/tensorflow/models/tree/master/official
       - TensorFlow Hub for Image, Text, Video (models + data) - https://tfhub.dev/
       - TF Datasets - https://www.tensorflow.org/datasets/catalog/overview
       - YouTube Adventures In The Cloud series - https://www.youtube.com/AdventuresInTheCloud
-   - Learning about APIs and Concepts
+   - **Learning about APIs & Concepts**
       - Trying out DocumentAI - https://cloud.google.com/document-ai
       - Teachable Machines (teach kids AI) - https://teachablemachine.withgoogle.com/
-    - AI Ethics/Tools
+    - **AI Ethics/Tools**
       - TensorFlow Responsible API - https://www.tensorflow.org/responsible_ai
       - TensorFlow Fairness Indicators - https://www.tensorflow.org/tfx/guide/fairness_indicators
+      - Article - addressing bias in COVID-19 data - https://cloud.google.com/blog/products/ai-machine-learning/google-and-harvard-improve-covid-19-forecasts
 
  ---
  ## Setup
