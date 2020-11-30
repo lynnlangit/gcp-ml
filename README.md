@@ -36,6 +36,7 @@ Samples currently include the following:
    - **Learning about APIs & Concepts**
       - Trying out DocumentAI - https://cloud.google.com/document-ai
       - Teachable Machines (teach kids AI) - https://teachablemachine.withgoogle.com/
+      - Aweseome TensorFlow (list of currated links) - https://github.com/jtoy/awesome-tensorflow
     - **AI Ethics/Tools**
       - TensorFlow Responsible API - https://www.tensorflow.org/responsible_ai
       - TensorFlow Fairness Indicators - https://www.tensorflow.org/tfx/guide/fairness_indicators
