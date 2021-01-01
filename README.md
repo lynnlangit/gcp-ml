@@ -27,11 +27,14 @@ Samples currently include the following:
  ---
 
  - **Resources**
-    - **Sample Data, Models**  
-      - GCP AI Hub - https://aihub.cloud.google.com/u/0/
-      - TensorFlow Model Garden - https://github.com/tensorflow/models/tree/master/official
+    - **Sample Data**  
+      - GCP public datasets - https://console.cloud.google.com/marketplace/browse?filter=solution-type:dataset
       - TensorFlow Hub for Image, Text, Video (models + data) - https://tfhub.dev/
       - TF Datasets - https://www.tensorflow.org/datasets/catalog/overview
+      - Google Dataset search - https://datasetsearch.research.google.com/
+   - **Example Models**
+      - GCP AI Hub - https://aihub.cloud.google.com/u/0/
+      - TensorFlow Model Garden - https://github.com/tensorflow/models/tree/master/official
       - YouTube Adventures In The Cloud series - https://www.youtube.com/AdventuresInTheCloud
    - **Learning about APIs & Concepts**
       - Trying out DocumentAI - https://cloud.google.com/document-ai
