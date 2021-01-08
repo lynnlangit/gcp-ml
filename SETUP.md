@@ -1,11 +1,13 @@
 # Setup for GCP ML
 
+<img src="https://github.com/lynnlangit/gcp-ml/blob/master/images/notebook-instances.png" width=800>
+
 
 ## 1. Client Environment
 
 You have several options for setting up a client development environment for GCP Machine Learning.  These environments match different use cases, summarized below as follows.  If you need to setup a new GCP account for learning, see the section at the bottom of this page for quick steps to do this.
 - **1. Google Colabs** - this is a zero-setup, browser-based Jupyter notebook environment which runs on GCP.  Although you can save your work (`.ipynb` and data files), this is an emphemeral comupute environment.  There is a free tier, with CPU/RAM service limits (but you can add TPU capacity) and also a higher resourced tier which has service costs.
-- **2. GCP Notebooks** - this is a partially-managed (PaaS) customizable VM solution, running on GCE.  You can select from a number of common pre-confirgured instance types (R, Python, TensorFlow, etc...). The instances have a charge per minute of use.  Instances can be stopped and re-started when not in use to reduce service costs.
+- **2. GCP Notebooks** - this is a partially-managed (PaaS) customizable VM solution, running on GCE.  You can select from a number of common pre-confirgured instance types (R, Python, TensorFlow, etc...). The instances have a charge per minute of use.  Instances can be stopped and re-started when not in use to reduce service costs.  This is the preferred method for this course - screenshot shown above.
 - **3. raw GCE VM** - not recommended for study - you would have to install all lanaguages and libraries
 - **4. local dev env** - it is possible to install Jupyter locally, either directly on your laptop or via a Docker container.
 
