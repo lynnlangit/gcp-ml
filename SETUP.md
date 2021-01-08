@@ -1,24 +1,15 @@
 # Setup for GCP ML
 
-## General GCP Account Setup
 
-The following are general setup steps:
-- **CREATE** a new gmail account for testing
-    - **SIGN IN** to Chrome with this account
-    
-- **CREATE** a new GCP account using a gmail address
-    - **LOGIN** to the GCP console with your gmail address
-    - **CREATE** a billing account (required credit card)
-    - **USE** 'new account' $ 300 credit
+## 1. Client Environment
 
-- **CREATE** a new GCP Project
-    - **ASSOCIATE** a billing account with this GCP project
-    - **SETUP** a billing alert for that project with a notification via pub/sub
-    - (Optional) **CREATE** a non-owner IAM admin user to reduce the attack surface
-    
----
+You have several options for setting up a client development environment for GCP Machine Learning.  These environments match different use cases, summarized below as follows.  If you need to setup a new GCP account for learning, see the section at the bottom of this page for quick steps to do this.
+- **1. Google Colabs** - this is a zero-setup, browser-based Jupyter notebook environment which runs on GCP.  Although you can save your work (`.ipynb` and data files), this is an emphemeral comupute environment.  There is a free tier, with CPU/RAM service limits (but you can add TPU capacity) and also a higher resourced tier which has service costs.
+- **2. GCP Notebooks** - this is a partially-managed (PaaS) customizable VM solution, running on GCE.  You can select from a number of common pre-confirgured instance types (R, Python, TensorFlow, etc...). The instances have a charge per minute of use.  Instances can be stopped and re-started when not in use to reduce service costs.
+- **3. raw GCE VM** - not recommended for study - you would have to install all lanaguages and libraries
+- **4. local dev env** - it is possible to install Jupyter locally, either directly on your laptop or via a Docker container.
 
-## Code & Code Editor
+## 2. Code & Code Editor
 
 You can use the editor and language of your choice.  I am using VSCode and Python on a MacOS.
 - Verify Python - I am using Python 2.7
@@ -61,3 +52,21 @@ GCP Services enabled by default:
     - compute templates - kubeflow pipelines, ML continers, Jupyter notebooks, ML services, TF models and VM images
     
 ![AI Hub](https://github.com/lynnlangit/gcp-ml/blob/master/images/ai-hub-main.png)
+
+---
+
+## 0. General GCP Account Setup
+
+The following are general setup steps:
+- **1. CREATE** a new gmail account for testing
+    - **SIGN IN** to Chrome with this account  
+- **2. CREATE** a new GCP account using a gmail address
+    - **LOGIN** to the GCP console with your gmail address
+    - **CREATE** a billing account (required credit card)
+    - **USE** 'new account' $ 300 credit
+- **3. CREATE** a new GCP Project
+    - **ASSOCIATE** a billing account with this GCP project
+    - **SETUP** a billing alert for that project with a notification via pub/sub
+    - (Optional) **CREATE** a non-owner IAM admin user to reduce the attack surface
+    
+---
