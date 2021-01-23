@@ -34,6 +34,7 @@ Samples currently include the following:
       - Google Dataset search - https://datasetsearch.research.google.com/
    - **Example Models**
       - GCP AI Hub - https://aihub.cloud.google.com/u/0/
+      - TensorFlow (Model) Hub - https://www.tensorflow.org/hub
       - TensorFlow Model Garden - https://github.com/tensorflow/models/tree/master/official
       - YouTube Adventures In The Cloud series - https://www.youtube.com/AdventuresInTheCloud
    - **Learning about APIs & Concepts**
