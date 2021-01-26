@@ -1,5 +1,13 @@
 # GCP - Machine Learning
 
+## Course
+
+This repo is a companion to my LinkedIn Learning course 'GCP ML Essentials' - at https://www.linkedin.com/learning/google-cloud-platform-for-machine-learning-essential-training
+
+---
+
+## Topic Areas
+
 Google Cloud Platform Analytics and Machine Learning Samples for services shown below.  
 
 ![GCP ML](/images/gcp-ml.png)
