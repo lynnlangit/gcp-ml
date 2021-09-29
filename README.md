@@ -55,6 +55,7 @@ Samples currently include the following:
       - TensorFlow Responsible API - https://www.tensorflow.org/responsible_ai
       - TensorFlow Fairness Indicators - https://www.tensorflow.org/tfx/guide/fairness_indicators
       - Article - addressing bias in COVID-19 data - https://cloud.google.com/blog/products/ai-machine-learning/google-and-harvard-improve-covid-19-forecasts
+      - Article - monitor models for drift - https://cloud.google.com/blog/topics/developers-practitioners/monitoring-feature-attributions-how-google-saved-one-largest-ml-services-trouble
 
  ---
  ## Setup
