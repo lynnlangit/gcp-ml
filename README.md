@@ -13,11 +13,13 @@ Google Cloud Platform Analytics and Machine Learning Samples for services shown 
 ![GCP ML](/images/gcp-ml.png)
 
 Samples currently include the following:
- - **GCP Colabs** (Jupyter-style) notebook 
+ - **GCP Colabs** (Jupyter-style) notebook (example shown below)
     - for BigQuery (connect & run SQL queries)
     - for BigQueryML (connect, build, train and predict using ML model) IMPORTANT: Use link in each notebook to open it in GCP Colabs environment
     - for TensorFlow w/GPU - speed test  
     - for production workloads, you may want to pay for and use ColabPro ($10/mo) for faster GPU, longer notebook runtimes and more memory
+
+<img src="https://github.com/lynnlangit/gcp-ml/blob/master/images/colabs-ui.png" width=800>
 
  - **Scripts** and code samples 
     - for BigQueryML in SQL
