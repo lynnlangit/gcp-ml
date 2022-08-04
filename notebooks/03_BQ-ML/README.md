@@ -15,3 +15,4 @@ Shown below - this is a partial list, see the BQ ML docs for a full list.
 
 - Tutorial: "BQ to create a deep neural network" - [link](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-create-dnn-models)
 - Repo: "BQ Time Series w/ARIMA" (setup and more demo notebooks - see notebook 4 and 4a) - [link](https://github.com/statmike/vertex-ai-mlops)
+- Doc: "End-to-end journey for each BQ ML type" - [link](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-e2e-journey)
