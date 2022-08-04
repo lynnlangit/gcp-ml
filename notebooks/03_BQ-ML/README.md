@@ -7,7 +7,7 @@ Shown below - the two-step process significantly simplifies model creation!
 
 <img src="https://github.com/lynnlangit/gcp-ml/blob/master/images/simplify.png" width=800>
 
-Shown below - this is partial list, see the BQ ML docs for a full list.
+Shown below - this is a partial list, see the BQ ML docs for a full list.
 
 <img src="https://github.com/lynnlangit/gcp-ml/blob/master/images/features.png" width=800>
 
