@@ -14,3 +14,4 @@ Shown below - this is partial list, see the BQ ML docs for a full list.
 ## Learn More
 
 - Tutorial: "BQ to create a deep neural network" - [link](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-create-dnn-models)
+- Repo: "BQ Time Series w/ARIMA" (setup and more notebooks) - [link](https://github.com/statmike/vertex-ai-mlops)
