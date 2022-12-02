@@ -1,6 +1,15 @@
 # Vertex AI Feature Store
 
-gcloud commands and process
+## What is it?
+Vertex AI Feature Store provides a managed solution for online feature serving (low-latency serving), which is critical for making timely online predictions. You do not need to build and operate low-latency data serving infrastructure; Vertex AI Feature Store does this for you and scales as needed. You can also use Vertex AI Feature Store to build batch pipelines for training models.
+- More info / docs - [link](https://cloud.google.com/vertex-ai/docs/featurestore)
+- Best Practices - [link](https://cloud.google.com/vertex-ai/docs/featurestore/best-practices)
+
+---
+
+## gcloud commands and process
+
+Shown below are example gcloud commands for creating a feature store, creating a feature, and creating a feature set. The process is as follows:
 
 ### Create a Feature Store
 ```
