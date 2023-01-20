@@ -1,6 +1,8 @@
 # GCP Jupyter Notebooks
 
-You can use Google Colabs or Vertex AI notebooks.  Vertex AI options are `managed` or `user-managed` notebooks - [info](https://cloud.google.com/vertex-ai/docs/workbench/notebook-solution)
+You can use Google Colabs or Vertex AI notebooks. 
+- Colabs has a free or a paid (`pro`) version - [info](https://research.google.com/colaboratory/faq.html
+- Vertex AI options are `managed` or `user-managed` notebooks - [info](https://cloud.google.com/vertex-ai/docs/workbench/notebook-solution)
 
 ## Example Notebooks
 
