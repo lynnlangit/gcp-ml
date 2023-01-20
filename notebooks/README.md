@@ -1,4 +1,8 @@
-# Example Notebooks
+# GCP Jupyter Notebooks
+
+You can use Google Colabs or Vertex AI notebooks.  Vertex AI options are `managed` or `user-managed` notebooks - [info](https://cloud.google.com/vertex-ai/docs/workbench/notebook-solution)
+
+## Example Notebooks
 
 - start with the examples in this folder
 - a big list (linked) to runnable Colab (ML) examples --> https://github.com/amrzv/awesome-colab-notebooks
