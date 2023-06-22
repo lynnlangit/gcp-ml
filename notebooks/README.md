@@ -8,6 +8,6 @@ You can use Google Colabs or Vertex AI notebooks.
 
 ## Example Notebooks
 
-- start with the examples in this folder
+- start with the examples in this folder -or- TF Tutorials --> https://www.tensorflow.org/tutorials
 - a big list (linked) to runnable Colab (ML) examples --> https://github.com/amrzv/awesome-colab-notebooks
 - example notebooks for VertexAI (Google official) --> https://github.com/GoogleCloudPlatform/vertex-ai-samples/tree/main/notebooks/official
