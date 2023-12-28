@@ -1,5 +1,7 @@
 # GCP - Machine Learning
 
+****NOTE: ARCHIVED - go to this link for current info --> https://github.com/lynnlangit/gcp-essentials/tree/master/6_AI-ML****
+
 ## Course
 
 This repo is a companion to my LinkedIn Learning course 'GCP ML Essentials' - at https://www.linkedin.com/learning/google-cloud-platform-for-machine-learning-essential-training
