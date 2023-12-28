@@ -1,6 +1,6 @@
 # GCP - Machine Learning
 
-****NOTE: ARCHIVED - go to this link for current info --> https://github.com/lynnlangit/gcp-essentials/tree/master/6_AI-ML****
+****NOTE: This REPO is now ARCHIVED - go to this link for current info --> https://github.com/lynnlangit/gcp-essentials/tree/master/6_AI-ML****
 
 ## Course
 
