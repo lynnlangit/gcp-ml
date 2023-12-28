@@ -1,6 +1,6 @@
 # Setup for GCP ML
 
-Use GCP Vertex AI  
+There are a number of ways to implement ML using Google APIs.  My preferred method is to use GCP Vertex AI.  To be complete, I've listed various options below.    
 
 
 ## 1. Client Environment
