@@ -1,6 +1,6 @@
 # Setup for GCP ML
 
-<img src="https://github.com/lynnlangit/gcp-ml/blob/master/images/notebook-instances.png" width=800>
+Use GCP Vertex AI  
 
 
 ## 1. Client Environment
@@ -11,7 +11,7 @@ You have several options for setting up a client development environment for GCP
     - Although you can save your work (`.ipynb` and data files), this is an emphemeral comupute environment. 
     - There is a free tier, with CPU/RAM service limits (but you can add TPU capacity) and also a higher resourced tier which has service costs.
     - Save your files (notebooks and input data) in Google Drive, GitHub or locally.
-- **2. GCP AI Platform Notebooks** - this is a partially-managed (PaaS) customizable VM solution, running on GCE.  
+- **2. GCP Vertex AI Jupyter Notebooks** - this is a partially-managed (PaaS) customizable VM solution, running on GCE.  
     - You can select from a number of common pre-confirgured instance types (R, Python, TensorFlow, etc...). 
     - The instances have a charge per minute of use.  Instances can be stopped and re-started when not in use to reduce service costs.  
     - This is the preferred method for this course - screenshot shown above.
@@ -53,14 +53,12 @@ GCP Services enabled by default:
  - MLKit (for Firebase - TensorFlow Lite on mobile device)
  - Cloud Repositories (if using some of GCP-supplied code samples)
  
- ## GCP AI Hub
-  - AI Hub - https://aihub.cloud.google.com/u/0/ (see screen shot below)
-  - Resources in the AI Hub include the following:
+ ## GCP Vertex AI
+ 
+Resources in GCP Vertex AI include the following:  
     - sample training data
     - trained ML models & technical guides
-    - compute templates - kubeflow pipelines, ML continers, Jupyter notebooks, ML services, TF models and VM images
-    
-![AI Hub](https://github.com/lynnlangit/gcp-ml/blob/master/images/ai-hub-main.png)
+    - compute templates - kubeflow pipelines, ML containers, Jupyter notebooks, ML services, TF models and VM images
 
 ---
 
